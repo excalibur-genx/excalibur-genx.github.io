@@ -8,7 +8,7 @@ install:
 
 script:
   - nbfancy render
-  - nbfancy html --include_slides
+  - nbfancy html --include_slides --redirect 00_homepage.html
 
 deploy:
   provider: pages
