@@ -1,0 +1,22 @@
+dist: bionic
+language: python
+python:
+  - "3.8"
+
+install:
+  - pip install nbfancy
+
+script:
+  - nbfancy render
+  - nbfancy html --include_slides
+
+deploy:
+  provider: pages
+  repo: excalibur-genx/excalibur-genx.github.io
+  target-branch: gh-pages
+  local-dir: html
+  github_token: $GITHUB_TOKEN
+  skip-cleanup: true
+  on:
+    branch: master
+    python: 3.8
